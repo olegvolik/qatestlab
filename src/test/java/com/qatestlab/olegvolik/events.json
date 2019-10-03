@@ -1,0 +1,47 @@
+[
+    {
+        "id": "100",
+        "name": "Event1",
+        "type": "PARTY",
+        "date": null,
+        "startTime": null,
+        "dateTime": null,
+        "createdAt": null
+    },
+    {
+        "id": "200",
+        "name": "Event2",
+        "type": "EXPO",
+        "date": null,
+        "startTime": null,
+        "dateTime": null,
+        "createdAt": null
+    },
+    {
+        "id": "300",
+        "name": "Event3",
+        "type": "BUSINESS_MEETING",
+        "date": null,
+        "startTime": null,
+        "dateTime": null,
+        "createdAt": null
+    },
+    {
+        "id": "400",
+        "name": "Event4",
+        "type": "EXPO",
+        "date": null,
+        "startTime": null,
+        "dateTime": null,
+        "createdAt": null
+    },
+    {
+        "id": "500",
+        "name": "Event5",
+        "type": "FORUM",
+        "date": null,
+        "startTime": null,
+        "dateTime": null,
+        "createdAt": null
+}
+]

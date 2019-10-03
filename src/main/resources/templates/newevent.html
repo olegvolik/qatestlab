@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Новое событие</title>
+    <link href="static/css/style_reg.css" th:href="@{/css/style_reg.css}" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+</head>
+<body>
+<div id="wrapper">
+    <div id="container">
+        <form th:action="@{/newevent}" method="post" th:object="${eventForm}">
+            <div id="first_step">
+                <h2>СОЗДАТЬ НОВОЕ</h2>
+                <h2>СОБЫТИЕ</h2>
+                <br><br/>
+                <div class="form">
+                    <input type="text" name="name" id="name" value="Название события" th:field="*{name}"/>
+                    <label for="name">Название события</label>
+                    <br/><br/>
+                    <select id="type" name="type" th:field="*{type}">
+                        <option value="BUSINESS_MEETING">Встреча</option>
+                        <option value="FORUM">Форум</option>
+                        <option value="EXPO">Выставка</option>
+                        <option value="PARTY">Вечеринка</option>
+                    </select>
+                    <label for="type">Тип события</label>
+                    <br/><br/>
+                    <input type="date" id="date" name="date" th:field = "*{date}" value="2019-01-01"/>
+                    <label for="date">Дата</label>
+                    <br/><br/>
+                    <input type="time" id="startTime" name="startTime" th:field = "*{startTime}" value="00:00"/>
+                    <label for="date">Время</label>
+                    <br/><br/>
+                </div><div class="clear"></div>
+                <input class="submit" type="submit" name="submit_first" id="submit_first" value="Создать событие"/>
+                <br/><br/>
+            </div>
+        </form>
+        <br/><br/>
+    </div>
+</div>
+<div class="gradient"></div>
+</body>
+</html>

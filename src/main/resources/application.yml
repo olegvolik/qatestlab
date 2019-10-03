@@ -1,0 +1,37 @@
+  spring:
+    thymeleaf:
+      cache: false
+      check-template: true
+      check-template-location: true
+      enabled: true
+      encoding: UTF-8
+      mode: HTML
+      prefix: classpath:/templates/
+      suffix: .html
+
+    datasource:
+      url: jdbc:postgresql://localhost:5432/EventNotifier
+      username: postgres
+      password: *****
+
+      hikari:
+        connection-timeout: 60000
+        maximum-pool-size: 5
+
+    jpa:
+      hibernate.ddl-auto: update
+      show-sql: false
+      properties.hibernate.temp.use_jdbc_metadata_defaults: false
+      database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+      logging:
+        pattern.console: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"
+        level:
+          root: WARN
+          org.hibernate:
+            SQL: debug
+            type.descriptor.sql: trace
+          org.springframework.web: DEBUG
+    mvc:
+      view.prefix: /WEB-INF/jsp/
+      view.suffix: .jsp
+    messages.basename: validation

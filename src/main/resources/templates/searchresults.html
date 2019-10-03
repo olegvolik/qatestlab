@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" th:href="@{/css/style_ulist.css}">
+		<title>Результаты поиска</title>
+	</head>
+	<body>
+	<h1>Список событий</h1>
+	<a th:href="@{/newevent}">Новое событие</a>
+	<br/><br/>
+	<a href="/">На главную</a>
+	<br/><br/>
+		<table>
+			<thead>
+				<tr>
+					<th>Название события</th>
+					<th>Тип события</th>
+					<th>Дата</th>
+					<th>Время</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="result : ${results}">
+					<td th:utext="${result.name}"></td>
+					<td th:utext="${result.type}"></td>
+					<td th:utext="${result.date}"></td>
+					<td th:utext="${result.startTime}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

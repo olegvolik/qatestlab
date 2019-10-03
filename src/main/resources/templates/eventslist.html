@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" th:href="@{/css/style_ulist.css}">
+		<title>События</title>
+	</head>
+	<body>
+	<h1>Список событий</h1>
+	<a th:href="@{/newevent}">Новое событие</a>
+	<br/><br/>
+	<a href="/">На главную</a>
+	<br/><br/>
+	<form name="delete" th:action="@{/evdelete}" method="post">
+		<table>
+			<thead>
+				<tr>
+					<th>Название события</th>
+					<th>Тип события</th>
+					<th>Дата</th>
+					<th>Время</th>
+					<th>Редактировать</th>
+					<th>Удалить</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="event : ${events}">
+					<td th:utext="${event.name}"></td>
+					<td th:utext="${event.type}"></td>
+					<td th:utext="${event.date}"></td>
+					<td th:utext="${event.startTime}"></td>
+					<td><input type="submit" name="evName" th:value="${event.name}" class="delete"
+							   th:formmethod="get" th:formaction="@{/editevent/}"/></td>
+					<td><input type="submit" name="name" th:value="${event.name}" class="delete"
+							   th:formaction="@{/evdelete/{evName} (evName=${event.name})}"/></td>
+				</tr>
+			</tbody>
+		</table>
+		</form>
+	</body>
+</html>
